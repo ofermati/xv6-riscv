@@ -11,3 +11,5 @@
 #define NBUF         (MAXOPBLOCKS*3)  // size of disk block cache
 #define FSSIZE       2000  // size of file system in blocks
 #define MAXPATH      128   // maximum file path name
+#define NISLOCK      16   // number of Israeli locks in the kernel
+#define NISWAIT      16   // max waiters per Israeli lock

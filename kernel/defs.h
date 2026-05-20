@@ -192,5 +192,12 @@ uint            lcg_rand(void);
 void            setgid(int);
 int             getgid(void);
 
+// israeli.c
+void            israeliinit(void);
+int             israeli_create(int);
+int             israeli_acquire(int);
+int             israeli_release(int);
+int             israeli_destroy(int);
+
 // number of elements in fixed-size array
 #define NELEM(x) (sizeof(x)/sizeof((x)[0]))
