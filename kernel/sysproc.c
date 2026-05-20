@@ -104,3 +104,18 @@ sys_lcg_rand(void)
 {
   return (uint64)lcg_rand();
 }
+
+uint64
+sys_setgid(void)
+{
+  int gid;
+  argint(0, &gid);
+  setgid(gid);
+  return 0;
+}
+
+uint64
+sys_getgid(void)
+{
+  return (uint64)getgid();
+}

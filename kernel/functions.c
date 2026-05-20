@@ -3,6 +3,7 @@
 #include "memlayout.h"
 #include "riscv.h"
 #include "spinlock.h"
+#include "proc.h"
 #include "defs.h"
 
 struct spinlock randlock;
@@ -27,4 +28,24 @@ lcg_rand(void)
     v = state;
     release(&randlock);
     return v;
+}
+
+void
+setgid(int gid)
+{
+    struct proc *p = myproc();
+    acquire(&p->lock);
+    p->gid = gid;
+    release(&p->lock);
+}
+
+int
+getgid(void)
+{
+    struct proc *p = myproc();
+    int gid;
+    acquire(&p->lock);
+    gid = p->gid;
+    release(&p->lock);
+    return gid;
 }
