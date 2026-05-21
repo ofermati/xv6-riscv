@@ -191,6 +191,10 @@ void            lcg_srand(uint);
 uint            lcg_rand(void);
 void            setgid(int);
 int             getgid(void);
+void            teaminit(void);
+int             team_score_inc(int);
+int             team_score_get(int);
+void            team_score_reset(void);
 
 // israeli.c
 void            israeliinit(void);

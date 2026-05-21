@@ -151,3 +151,26 @@ sys_israeli_destroy(void)
   argint(0, &lock_id);
   return (uint64)israeli_destroy(lock_id);
 }
+
+uint64
+sys_team_score_inc(void)
+{
+  int team;
+  argint(0, &team);
+  return (uint64)team_score_inc(team);
+}
+
+uint64
+sys_team_score_get(void)
+{
+  int team;
+  argint(0, &team);
+  return (uint64)team_score_get(team);
+}
+
+uint64
+sys_team_score_reset(void)
+{
+  team_score_reset();
+  return 0;
+}

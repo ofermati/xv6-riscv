@@ -13,3 +13,4 @@
 #define MAXPATH      128   // maximum file path name
 #define NISLOCK      16   // number of Israeli locks in the kernel
 #define NISWAIT      16   // max waiters per Israeli lock
+#define NTEAMS       16   // max teams for relay-race scoring

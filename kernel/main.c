@@ -30,6 +30,7 @@ main()
     virtio_disk_init(); // emulated hard disk
     initlock(&randlock, "lcg"); // PRNG (LCG) lock
     israeliinit();   // Israeli locks
+    teaminit();      // relay-race team scores
     userinit();      // first user process
     __sync_synchronize();
     started = 1;
